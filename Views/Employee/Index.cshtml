@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<div class="container mt-5">
+    <!-- Page Title -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-primary">
+            <i class="bi bi-speedometer2 me-2"></i>@ViewData["Title"]
+        </h1>
+        <h4 class="text-muted">Manage Farmers and Products</h4>
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i>@TempData["Success"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+    </div>
+
+    <!-- Dashboard Cards -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Add Farmer -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/images/AddFarmer.png" class="card-img-top" alt="Add Farmer">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-success fw-semibold">Add New Farmer</h5>
+                    <p class="card-text text-secondary">Register a new farmer and set up their profile.</p>
+                    <a asp-action="AddFarmer" class="btn btn-success">
+                        <i class="bi bi-person-plus-fill me-1"></i>Add Farmer
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Farmers -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/images/FArmers List.png" class="card-img-top" alt="View Farmers">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary fw-semibold">View All Farmers</h5>
+                    <p class="card-text text-secondary">Browse and manage all registered farmers.</p>
+                    <a asp-action="ListFarmers" class="btn btn-primary">
+                        <i class="bi bi-people-fill me-1"></i>View Farmers
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Products -->
+        <div class="col">
+            <div class="card h-100 shadow-sm border-0">
+                <img src="~/images/View and Filer Products.png" class="card-img-top" alt="View Products">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning fw-semibold">View & Filter Products</h5>
+                    <p class="card-text text-secondary">Access and filter products submitted by farmers.</p>
+                    <a asp-action="ProductList" class="btn btn-warning text-white">
+                        <i class="bi bi-box-seam-fill me-1"></i>View Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+}

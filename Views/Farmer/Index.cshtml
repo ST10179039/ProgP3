@@ -1,0 +1,69 @@
+﻿@model IEnumerable<AgriEnergyP2.Models.Product>
+
+@{
+    ViewData["Title"] = "Farmer Dashboard";
+}
+
+<div class="container mt-5">
+    <!-- Main Title -->
+    <div class="text-center mb-5">
+        <h1 class="display-5 fw-bold text-success">
+            <i class="bi bi-person-badge-fill me-2"></i>@ViewData["Title"]
+        </h1>
+        <h4 class="text-muted">My Products</h4>
+    </div>
+
+    <!-- Add Product Button -->
+    <div class="d-flex justify-content-end mb-4">
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle me-1"></i> Add New Product
+        </a>
+    </div>
+
+    <!-- Success Message -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="bi bi-check-circle-fill me-1"></i>@TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Product List -->
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info text-center">
+            <i class="bi bi-info-circle-fill me-1"></i>You haven't added any products yet.
+            <br />Click <strong>"Add New Product"</strong> to get started.
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var product in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary fw-semibold">@product.Name</h5>
+                            <p class="card-text text-secondary">
+                                <strong>Type:</strong> @product.Type <br />
+                                <strong>Production Date:</strong> @product.ProductionDate.ToShortDateString()
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0 text-end">
+                            <!-- Optional edit/delete buttons -->
+                            @* Example:
+                            <a asp-action="Edit" asp-route-id="@product.Id" class="btn btn-outline-primary btn-sm">Edit</a>
+                            *@
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+}

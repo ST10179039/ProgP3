@@ -1,0 +1,67 @@
+﻿
+
+
+@{
+    ViewData["Title"] = "Agri-Energy Connect - Home";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10 text-center">
+            <h1 class="display-4 text-success fw-bold">Welcome to Agri-Energy Connect</h1>
+            <p class="lead text-muted mb-4">Bridging the Agricultural Sector with Green Energy Solutions in South Africa.</p>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-0 mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Sustainable Farming Hub</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Discover sustainable farming practices, resources, and tools to boost your agricultural productivity.</p>
+                            <a href="@Url.Action("Index", "Farmers")" class="btn btn-primary">Explore the Hub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-0 mb-4">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">Green Energy Marketplace</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Find green energy solutions tailored for your farming needs. Connect with energy providers.</p>
+                            <a href="@Url.Action("Index", "EnergyProviders")" class="btn btn-warning">Browse Solutions</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-lg border-0 mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Educational & Training Resources</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">Access expert knowledge and training to improve your farming techniques and energy usage.</p>
+                            <a href="@Url.Action("Index", "Education")" class="btn btn-success">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h4 class="mb-4 text-primary">Why Choose Agri-Energy Connect?</h4>
+                <p>Our platform provides a holistic approach to sustainable farming and green energy solutions, with a focus on:</p>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check-circle text-success"></i> Seamless connection between farmers and green energy providers.</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Access to up-to-date resources, tips, and tools for sustainable farming.</li>
+                    <li><i class="bi bi-check-circle text-success"></i> Collaboration opportunities for farming projects and funding.</li>
+                    <li><i class="bi bi-check-circle text-success"></i> User-friendly platform with a secure and transparent process.</li>
+                </ul>
+
+                <div class="mt-4">
+                    <a href="@Url.Action("Index", "Farmer")" class="btn btn-outline-primary btn-lg">Join Us Today</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
